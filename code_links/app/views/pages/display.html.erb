@@ -1,0 +1,19 @@
+<h1>C1#display</h1>
+<p>Find me in app/views/c1/display.html.erb</p>
+<h1>name</h1>
+
+<% @users.each do |u| %>
+  <ul>
+    <li>
+      <%=u.name %>
+    </li>
+    <ul>
+      <% u.messages.each do |m| %>
+        <li><%= m.content %>
+        </li>
+      <% end %>
+    </ul>
+
+</ul>
+
+<% end %>

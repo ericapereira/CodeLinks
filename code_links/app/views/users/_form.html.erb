@@ -1,0 +1,55 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %> <a id="star">*</a>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %> <a id="star">*</a>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+  <div class="field">
+    <%= form.label :account_type %>
+    <%= form.select :account_type, @account_type_option %>
+  </div>
+  <div class="field">
+    <%= form.label :about_me %>
+    <%= form.text_field :about_me %>
+  </div>
+
+  <div class="field">
+  <%= form.label  :password %> <a id="star">*</a>
+  <%= form.password_field  :password %>
+  </div>
+
+  <div class="field">
+  <%= form.label :password_confirmation, "Confirmation" %> <a id="star">*</a>
+  <%= form.password_field  :password_confirmation%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

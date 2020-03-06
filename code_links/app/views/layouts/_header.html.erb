@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <nav>
+          <div class="logo">
+            <p>LOGO HERE</p>
+            </div>
+          <ul class= "nav navbar-nav navbar-right">
+            <li><%= link_to "Home", controller: "pages", action: "home" %></li>
+            <% if logged_in? %>
+                <li><%= link_to "My Profile", current_user %></li>
+
+                <li><%= link_to "Account Settings", edit_user_path(current_user) %></li>
+                <% if current_user.try(:admin?) %>
+                <li><%= link_to 'Admin Settings', users_path %> </li>
+                <% end %>
+                <li><%= link_to "Log out", logout_path, method: :delete %></li>
+
+               <% else %>
+                  <li><%= link_to "Log in", login_path %></li>
+              <% end %>
+
+          </ul>
+          </nav>
+
+      </div>
+
+
+
+</header>
