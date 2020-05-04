@@ -1,15 +1,27 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
+
       <div class="container-fluid">
         <nav>
           <div class="logo">
-            <p>LOGO HERE</p>
+            <%= link_to image_tag( "logo1.jpg", alt: "ManBearPig", id: "logo" ), "https://www.youtube.com/watch?v=0AW4nSq0hAc", target: "_blank" %>
             </div>
           <ul class= "nav navbar-nav navbar-right">
-            <li><%= link_to "Home", controller: "pages", action: "home" %></li>
+            <li id="home"><%= link_to "Home", controller: "pages", action: "home" %></li>
             <% if logged_in? %>
-                <li><%= link_to "My Profile", current_user %></li>
+                <li><%= link_to "My Profile", profile_path %></li>
 
-                <li><%= link_to "Account Settings", edit_user_path(current_user) %></li>
+                <% if tutor?%>
+
+                  <li><%= link_to "Lessons", lessons_path %></li>
+                  <li><%= link_to "The Hub", posts_path %></li>
+
+
+                <%end%>
+                <li><%= link_to "Search", search_path %></li>
+
+                <% @inbox = "Inbox <span id='move-up'>#{current_messages}</span>".html_safe %>
+                <li><%= link_to "Inbox", conversations_path(current_user) %></li>
+                <li><span id='move-up'><%=current_messages%> </span></li>
                 <% if current_user.try(:admin?) %>
                 <li><%= link_to 'Admin Settings', users_path %> </li>
                 <% end %>

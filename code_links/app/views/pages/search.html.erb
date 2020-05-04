@@ -1,0 +1,31 @@
+<div class="card-hub-main">
+
+<% if tutor?%>
+
+  <h1>Search Jobs In Your Area!</h1>
+  <ul>
+    <% guardians.each do |t|%>
+      <div class="hub-box">
+      <h2> <%= t.name %></h2>
+      Location: <%= t.city %>
+        <br>
+        <%= link_to "View Profile", t %>
+      </div>
+    <%end%>
+
+  </ul>
+<%else%>
+  <h1>Search Tutors In Your Area!</h1>
+  <ul >
+    <% tutors.each do |t|%>
+      <div class="hub-box">
+      <h2> <%= t.name %></h2>
+      Location: <%= t.city %>
+        <br>
+        <%= link_to "View Profile", t %>
+
+      </div>
+    <%end%>
+  </ul>
+  <%end%>
+</div>

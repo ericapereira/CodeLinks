@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+#extend Mailboxer::Models::Messageable::ActiveRecordExtension
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :admin_account, only: :destroy
-
+  #acts_as_messageable
   # GET /users
   # GET /users.json
+
   def index
     @users = User.all
   end
@@ -14,7 +16,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+  end
 
+  def get_user(set_user)
+
+  end
+
+  def profile
+    @user = current_user
   end
 
   # GET /users/new
@@ -46,11 +55,13 @@ class UsersController < ApplicationController
     @account_type_option["Tutor"] = "Tutor"
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user }
+        flash[:success] = 'ACCOUNT CREATED'
         format.json { render :show, status: :created, location: @user }
         log_in @user
       else
         format.html { render :new }
+        flash[:danger] = 'Error: fill in all fields'
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -63,14 +74,12 @@ class UsersController < ApplicationController
     @account_type_option["Parent"] = "Parent"
     @account_type_option["Legal Guardian"] = "Legal Guardian"
     @account_type_option["Tutor"] = "Tutor"
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    @user = current_user
+    if @user.update_attributes(user_params)
+        flash[:success] = "Account was successfully updated."
+        redirect_to profile_path
+    else
+      render 'edit'
     end
   end
 
@@ -79,7 +88,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, alert: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -92,7 +101,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :phone_number, :city, :about_me,:account_type, :password, :password_confirmation)
     end
 
     def admin_account

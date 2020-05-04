@@ -1,0 +1,25 @@
+<div class="card-hub-main">
+
+<h1>All Conversations</h1>
+<%  @conversations.each do |c| %>
+  <% unless c.is_trashed?(c)%>
+    <div class="hub-box">
+      <div class="subject-link">
+
+        <%= link_to c.subject, conversation_path(c)%>
+      </div>
+      <div class="trash">
+        <%= link_to image_tag('trash.png'), trash_conversation_path(c), method: :post, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+    </div>
+
+  <%end %>
+
+<%end%>
+<br>
+<div class="new">
+  <%= link_to "New Conversation", new_conversation_path %>
+
+</div>
+</div>

@@ -1,0 +1,29 @@
+<% content_for :page_title, @post.title %>
+	<section class="card-hub">
+		<h1 id="subject"><%=@post.title%>
+		</h1>
+			<div class="content-p">
+				<%= @post.context %>
+			</div>
+			<span id="posted-by">Posted by: <%=User.find_by(id: @post.user_id).name %></span>
+<br>
+<br>
+					<%= render @post.comments %>
+
+					<div class="comment-form">
+						<h3 class="subtitle is-3">Leave a reply:</h3>
+						<%= render 'comments/form' %>
+					</div>
+					<% if current_user.id == @post.user_id %>
+						<div class="level-right">
+							<p class="level-item">
+								<% link_to "Edit", edit_post_path(@post), class:"button" %>
+							</p>
+							<p class="level-item delt">
+<br>
+								<%= link_to image_tag('trash.png'), post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+							</p>
+						</div>
+				<%end %>
+		</section>

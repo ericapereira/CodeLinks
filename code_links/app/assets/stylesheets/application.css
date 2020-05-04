@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "custom";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +16,48 @@
  *= require_tree .
  *= require_self
  */
+ ul{
+   padding: none;
+ }
+.browse-t{
+  margin-bottom: 10px;
+  background-color: #e6efff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 7px;
+}
+.inbox-m{
+  margin-bottom: 10px;
+  background-color: #e6e6e6;
+  padding: 20px;
+  width: 100%;
+  border-radius: 7px;
+}
+.browse-g{
+  margin-bottom: 10px;
+  background-color: #e0eeff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 7px;
+}
+.created-by{
+  font-size: 18px;
+  background-color: #d9e9ff;
+  padding:15px;
+  border-radius: 7px;
+  margin-bottom: 10px
+}
+hr{
+  height: 1px;
+    background-color: black;
+  }
+  .browse-g h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 0;
+  }
+  .browse-t h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 0;
+  }

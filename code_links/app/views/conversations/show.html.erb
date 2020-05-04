@@ -1,0 +1,53 @@
+<div class="card-hub">
+
+<h1><%=@conversation.subject%></h1>
+
+
+<%  @conversation.receipts_for(current_user).each do |r| %>
+
+    <% if r.message.sender.name.eql?(current_user.name) %>
+    <div class="">
+      <div class="name">
+        <%=r.message.sender.name%>:
+      </div>
+      <%= r.message.body%>
+      <br>
+      <div class="created">
+        <%=r.created_at%>
+      </div>
+      <br>
+    </div>
+
+    <%else %>
+    <div class="">
+      <div class="name">
+        <%=r.message.sender.name%>:
+      </div>
+      <%= r.message.body%>
+      <br>
+      <div class="created">
+        <%=r.created_at%>
+      </div>
+      <br>
+    </div>
+    <% end %>
+
+
+
+<%end %>
+
+<div class="">
+  <%= form_tag conversation_messages_path(@conversation), method: :post do %>
+    <div class="body">
+      <%= text_area_tag :body %>
+    </div>
+    <%= submit_tag "Respond" %>
+  <% end %>
+
+</div>
+<br>
+<span class="back-to">  <%= link_to 'Back to Inbox',conversations_path %>
+</span>
+
+
+</div>

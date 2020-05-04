@@ -1,0 +1,19 @@
+<div class="card-hub">
+  <h1>New Blog Post</h1>
+<%= simple_form_for @post do |f| %>
+  <div class="hide">
+    <%= f.select :user_id, @current %>
+  </div>
+  <div class="subject">
+      <%= f.input :title, label: ""%>
+
+  </div>
+  <div class="body">
+      <%= f.input :context, label: "" %>
+  </div>
+  <div class="new">
+    <%= f.button :submit, 'Create new post', class: "new" %>
+
+  </div>
+<% end %>
+</div>

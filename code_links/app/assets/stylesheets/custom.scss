@@ -1,24 +1,52 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+ul .nop{
+  width: 100%;
+  margin-left:  0;
+}
+header .nav{
+  margin-bottom: 0;
+}
 body{
+  font-family: 'Exo 2';
+
+  background-color: #46506E;
     margin: 100px;
-    padding-top: 80px;
+    padding-top: 10px;
+}
+#logo {
+width: 6.5em;
+float: left;
+margin-top: 16px;
+margin-left: 2em;
 }
 
-.logo{
-  margin-top: 10px;
-max-height: 30px;
-}
 .nav{
+  margin-top: 17px;
+  margin-right: 2em;
     float: right;
-    padding-top: 20px;
-padding-bottom: 10px;
+    padding-top: 1em;
 color: white;
+padding-bottom: 1em;
+}
+.navbar-nav > li > a{
+    padding: 12px;
+    margin-right: 5px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-left: 1em;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: black;
+    background: #f2f2f2;
+    border-radius: 7px;
 }
 .navbar{
-    background-color: #002663;
+    background-color: #1C2541;
     color: white;
-    font-size: 20px;
 }
 #not-found{
   font-size: 30px;
@@ -29,4 +57,349 @@ color: white;
 #star{
   color: red;
   font-weight:900;
+}
+footer{
+    border-top: 2px solid #1C2541;
+    color: #777;
+    margin-top: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f2f2f2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+footer .bottom-text-first{
+  margin-left: 2em;
+}
+
+footer a:hover{color: #1C2541;}
+footer small {float: left;}
+footer ul{
+  text-transform: uppercase;
+    float: right;
+    list-style: none;
+    margin-right: 2em;
+}
+footer ul li{
+    float: right;
+    margin-left: 20px;
+}
+nav span #move-up{
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #e0eeff;
+  transform: translateY(10px);
+}
+.created{
+  font-size: 12px;
+}
+.send-to{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.subject{
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.subject input{
+  width: 100%
+}
+
+.body{
+  padding-top: 10px;
+}
+.body textarea{
+  width: 100%
+}
+.sender{
+  font-size: 18px;
+  background-color: #d9e9ff;
+  padding:15px;
+  border-radius: 7px;
+  margin-bottom: 10px
+}
+.owner{
+  font-size: 18px;
+  background-color: #e6e6e6;
+  padding: 15px;
+  border-radius: 7px;
+  margin-bottom: 10px
+
+}
+
+.name{
+  font-weight: bold;
+}
+.subject-link a{
+  font-size: 28px;
+}
+
+.trash img{
+  max-height: 15px;
+}
+
+h1{
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+  //margin: auto;
+}
+.new a{
+  color: black;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #e3fff1;
+}
+.new-hub a{
+  color: black;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #e3fff1;
+}
+.card-hub .btn{
+  color: black;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #e3fff1;
+}
+
+.card-hub .new{
+  margin-top: 10px;
+
+}
+.new-hub{
+  margin-top: 30px;
+}
+
+.Inbox{
+  margin-top: 30px;
+}
+.Inbox a{
+  font-size: 20px;
+  color: black;
+}
+
+.lesson{
+  font-size: 18px;
+  color: black;
+}
+
+body{
+  color: black;
+}
+
+.lessons{
+  font-size: 18px;
+  background-color: #e0eeff;
+  padding:25px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.lesson-title{
+  font-size: 18px;
+  padding:15px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.lesson-title h1{
+  margin: auto;
+}
+.project{
+  font-size: 18px;
+  background-color: #E0FBFC;
+  padding:15px;
+  padding-bottom: 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.resources{
+  font-size: 18px;
+  background-color: #E5E5E5;
+  padding:15px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.img img{
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  .img-p img{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img-g img{
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+  .card{
+    font-size: 18px;
+    background-color: #e0eeff;
+    padding:15px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+  }
+  .card h1{
+    padding-bottom: 0;
+  }
+  .main-post{
+    margin-bottom: 10px;
+    background-color: #e6e6e6;
+    padding: 20px;
+    width: 100%;
+    border-radius: 7px;
+  }
+  .card-hub{
+    color: black;
+    font-size: 18px;
+    background-color: #FFFF;
+    padding:15px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+  }
+  .content-p{
+    font-size: 22px;
+  }
+  .content-c{
+    font-size: 18px;
+  }
+
+  .com-box{
+    margin-top: 15px;
+    background: #ebebeb;
+    width: 100%;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 12px;
+  }
+#posted-by{
+  font-size: 12px;
+
+}
+.comment-form{
+  margin-top: 15px;
+  background: #ebebeb;
+  width: 100%;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+.comment-form h3{
+margin: 0;
+font-size: 15px;
+}
+.control{display: none;}
+.hide{display: none;}
+
+.comment-form .btn{
+margin: 0;
+}
+.card-hub img{
+    max-height: 15px;
+}
+
+#home a{
+border-bottom: 1px solid #FFFF;
+margin: 2px;
+}
+.new-mssg{
+  margin-top: 15px;
+  background: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 7px;
+}
+.new-mssg h1{
+  font-size: 25px;
+  font-weight: 400;
+}
+.new-user{
+  background: #ebebeb;
+  width: 100%;
+  padding: 26px;
+  border-radius: 7px;
+}
+.new-user h1{
+  padding: 0;
+  font-size: 22px;
+  font-weight: bolder;
+}
+.new-user label{
+  font-weight: normal;
+}
+.new-user .form-control{
+  margin-bottom: 15px;
+}
+
+.new-session{
+  background: #ebebeb;
+  width: 60%;
+  padding: 26px;
+  border-radius: 7px;
+  margin: auto;
+}
+.new-session h1{
+  padding: 0;
+  font-size: 22px;
+  font-weight: bolder;
+  margin: auto;
+}
+.new-session label{
+  font-weight: normal;
+}
+.card-hub-main{
+  color: black;
+  font-size: 18px;
+  background-color: #e0eeff;
+  padding:15px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+.hub-box{
+  margin-top: 20px;
+  background: white;
+  width: 100%;
+  padding: 18px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+.card-hub-main h1{
+  font-size: 30px;
+  font-weight: 400;
+}
+.card-hub h1{
+  font-size: 30px;
+  font-weight: 400;
+}
+.lessons h1{
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 0;
+}
+.hub-box h3{
+  margin: 0;
+  font-size: 20px;
+}
+.hub-box h2{
+  margin: 0;
+  font-size: 20px;
+}
+.card-hub label{
+  font-weight: normal;
+}
+.card-hub-main ul{
+  padding-left: 0;
 }

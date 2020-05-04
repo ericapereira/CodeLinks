@@ -1,0 +1,19 @@
+<% content_for :page_title,  "The Hub" %>
+<div class="card-hub-main">
+	<h1>THE HUB</h1>
+<h5>Browse through the blog posts below or create your own!</h5>
+		<% @posts.each do |post| %>
+			<div class="hub-box">
+					<h3><%= link_to post.title, post %></h3>
+					<span class="tag is-rounded"><%= post.comments.count %>
+						comments</span>
+			</div>
+
+		<% end %>
+		<div class="new-hub">
+			<%= link_to "New Blog Post", new_post_path, class: "new"%>
+
+		</div>
+		<br>
+
+	</div>
